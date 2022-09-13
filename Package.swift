@@ -13,7 +13,12 @@ let package = Package(
     products: [
         .plugin(
             name: "SwiftLint",
-            targets: ["SwiftLint"]),
+            targets: ["SwiftLint"]
+        ),
+        .plugin(
+            name: "SwiftLintTest",
+            targets: ["SwiftLintTest"]
+        ),
     ],
     dependencies: [
     ],
@@ -26,6 +31,12 @@ let package = Package(
         .plugin(
             name: "SwiftLint",
             capability: .buildTool(),
-            dependencies: ["SwiftLintBinary"]),
+            dependencies: ["SwiftLintBinary"]
+        ),
+        .plugin(
+            name: "SwiftLintTest",
+            capability: .buildTool(),
+            dependencies: ["SwiftLintBinary"]
+        ),
     ]
 )
