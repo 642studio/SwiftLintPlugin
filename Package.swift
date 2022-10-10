@@ -16,6 +16,10 @@ let package = Package(
             targets: ["SwiftLint"]
         ),
         .plugin(
+            name: "SwiftLintApp",
+            targets: ["SwiftLintApp"]
+        ),
+        .plugin(
             name: "SwiftLintTest",
             targets: ["SwiftLintTest"]
         ),
@@ -30,6 +34,11 @@ let package = Package(
         ),
         .plugin(
             name: "SwiftLint",
+            capability: .buildTool(),
+            dependencies: ["SwiftLintBinary"]
+        ),
+        .plugin(
+            name: "SwiftLintApp",
             capability: .buildTool(),
             dependencies: ["SwiftLintBinary"]
         ),
